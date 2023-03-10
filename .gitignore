@@ -1,0 +1,19 @@
+/.devenv/
+/.devenv.flake.nix
+devenv.lock
+.idea/
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+/public/uploads/
+/node_modules/
+/cache/
+/.DS_Store
+/dev-ops/
+###< symfony/framework-bundle ###
