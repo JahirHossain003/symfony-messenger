@@ -15,6 +15,7 @@ class ImagePost
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      * @Groups("image:output")
+     * @phpstan-param int $id
      */
     private $id;
 

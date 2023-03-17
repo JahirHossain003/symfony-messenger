@@ -25,7 +25,7 @@ class ImagePostController extends AbstractController
     /**
      * @Route("/api/images", methods="GET")
      */
-    public function list(ImagePostRepository $repository)
+    public function list(ImagePostRepository $repository): Response
     {
         $posts = $repository->findBy([], ['createdAt' => 'DESC']);
 
@@ -37,7 +37,7 @@ class ImagePostController extends AbstractController
     /**
      * @Route("/api/images", methods="POST")
      */
-    public function create(Request $request, ValidatorInterface $validator, PhotoFileManager $photoManager, EntityManagerInterface $entityManager, MessageBusInterface $messageBus)
+    public function create(Request $request, ValidatorInterface $validator, PhotoFileManager $photoManager, EntityManagerInterface $entityManager, MessageBusInterface $messageBus): JsonResponse
     {
         /** @var UploadedFile $imageFile */
         $imageFile = $request->files->get('file');
@@ -68,7 +68,7 @@ class ImagePostController extends AbstractController
     /**
      * @Route("/api/images/{id}", methods="DELETE")
      */
-    public function delete(ImagePost $imagePost, MessageBusInterface $messageBus)
+    public function delete(ImagePost $imagePost, MessageBusInterface $messageBus): Response
     {
         $messageBus->dispatch(new DeleteImagePost($imagePost));
         
@@ -78,7 +78,7 @@ class ImagePostController extends AbstractController
     /**
      * @Route("/api/images/{id}", methods="GET", name="get_image_post_item")
      */
-    public function getItem(ImagePost $imagePost)
+    public function getItem(ImagePost $imagePost): JsonResponse
     {
         return $this->toJson($imagePost);
     }
