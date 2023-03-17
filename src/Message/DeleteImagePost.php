@@ -6,7 +6,6 @@ use App\Entity\ImagePost;
 
 class DeleteImagePost
 {
-
     /**
      * @var ImagePost
      */
@@ -24,5 +23,4 @@ class DeleteImagePost
     {
         return $this->imagePost;
     }
-
 }

@@ -25,7 +25,7 @@ class ImagePostNormalizer implements NormalizerInterface, CacheableSupportsMetho
     /**
      * @param ImagePost $imagePost
      */
-    public function normalize($imagePost, $format = null, array $context = array()): array
+    public function normalize($imagePost, $format = null, array $context = []): array
     {
         $data = $this->normalizer->normalize($imagePost, $format, $context);
 

@@ -2,10 +2,8 @@
 
 namespace App\Message;
 
-
 class AddPonkaToImage
 {
-
     /**
      * @var int
      */
@@ -23,5 +21,4 @@ class AddPonkaToImage
     {
         return $this->imagePostId;
     }
-
 }

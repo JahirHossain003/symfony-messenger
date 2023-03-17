@@ -20,8 +20,8 @@ class DeleteImagePostHandler implements MessageHandlerInterface
         $this->entityManager = $entityManager;
     }
 
-    public function __invoke(DeleteImagePost $deleteImagePost) {
-
+    public function __invoke(DeleteImagePost $deleteImagePost)
+    {
         $imagePost = $deleteImagePost->getImagePost();
 
         $this->entityManager->remove($imagePost);

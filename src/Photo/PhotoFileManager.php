@@ -27,7 +27,7 @@ class PhotoFileManager
             $originalFilename = $file->getFilename();
         }
 
-        $newFilename = pathinfo($originalFilename, PATHINFO_FILENAME).'-'.uniqid().'.'.$file->guessExtension();
+        $newFilename = pathinfo($originalFilename, PATHINFO_FILENAME) . '-' . uniqid() . '.' . $file->guessExtension();
         $stream = fopen($file->getPathname(), 'r');
         $result = $this->filesystem->writeStream(
             $newFilename,
@@ -58,7 +58,7 @@ class PhotoFileManager
 
     public function getPublicPath(ImagePost $imagePost): string
     {
-        return $this->publicAssetBaseUrl.'/'.$imagePost->getFilename();
+        return $this->publicAssetBaseUrl . '/' . $imagePost->getFilename();
     }
 
     public function read(string $filename): string

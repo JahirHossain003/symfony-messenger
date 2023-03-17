@@ -18,7 +18,6 @@ class AuditMiddleware implements MiddlewareInterface
 
     public function __construct(LoggerInterface $messengerAudit)
     {
-
         $this->messengerAudit = $messengerAudit;
     }
 

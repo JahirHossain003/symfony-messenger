@@ -31,7 +31,7 @@ class PhotoPonkaficator
         $targetWidth = $targetPhoto->width() * .3;
         $targetHeight = $targetPhoto->height() * .4;
 
-        $ponkaPhoto->resize($targetWidth, $targetHeight, function(Constraint $constraint) {
+        $ponkaPhoto->resize($targetWidth, $targetHeight, function (Constraint $constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
         });
@@ -50,7 +50,7 @@ class PhotoPonkaficator
     private function getRandomPonkaFilename(): string
     {
         $finder = new Finder();
-        $finder->in(__DIR__.'/../../assets/ponka')
+        $finder->in(__DIR__ . '/../../assets/ponka')
             ->files();
 
         // array keys are the absolute file paths
