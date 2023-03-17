@@ -1,9 +1,11 @@
 <?php
+namespace App\Message\Event;
 
-namespace App\Message;
-
-class DeleteFile
+class ImagePostDeletedEvent
 {
+    /**
+     * @var string
+     */
     private $fileName;
 
     public function __construct(string $fileName)
