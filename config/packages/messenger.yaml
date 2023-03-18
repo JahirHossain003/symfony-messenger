@@ -11,6 +11,7 @@ framework:
                 default_middleware: allow_no_handlers
                 middleware:
                     - 'App\Messenger\AuditMiddleware'
+            query.bus: ~
 
         transports:
             # https://symfony.com/doc/current/messenger.html#transport-configuration
